@@ -2,15 +2,14 @@ const axios = require('axios');
 const fs = require('fs');
 
 // Replace 'YOUR_GITHUB_USERNAME' and 'YOUR_GITHUB_TOKEN' with your GitHub username and a personal access token
-const username = 'YOUR_GITHUB_USERNAME';
 const token = 'YOUR_GITHUB_TOKEN';
 
 async function fetchRepos() {
     try {
-        const response = await axios.get(`https://api.github.com/users/${username}/repos`, {
-            headers: {
-                Authorization: `token ${token}`,
-            },
+        const response = await axios.get(`https://api.github.com/users/rock12231/repos`, {
+            // headers: {
+            //     Authorization: `token ${token}`,
+            // },
         });
 
         const publicRepos = response.data.filter(repo => !repo.private);
